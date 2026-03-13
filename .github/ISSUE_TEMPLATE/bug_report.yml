@@ -1,7 +1,7 @@
 name: Bug Report
 description: Report a bug or unexpected behavior
 title: "[Bug]: "
-labels: ["bug", "needs-triage"]
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
@@ -54,38 +54,5 @@ body:
       label: Screenshots / Logs
       description: If applicable, add screenshots or paste relevant log output.
       placeholder: Paste logs or drag and drop screenshots here...
-    validations:
-      required: false
-
-  - type: dropdown
-    id: severity
-    attributes:
-      label: Severity
-      description: How severe is the impact of this bug?
-      options:
-        - "Critical – system is unusable / data loss"
-        - "High – major feature broken, no workaround"
-        - "Medium – feature impaired, workaround exists"
-        - "Low – minor inconvenience"
-    validations:
-      required: true
-
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment
-      description: Provide relevant environment details.
-      placeholder: |
-        - OS: [e.g. macOS 14, Windows 11, Ubuntu 22.04]
-        - Browser / runtime: [e.g. Chrome 123, Node 20]
-        - Version / commit: [e.g. v1.2.3 or abc1234]
-    validations:
-      required: false
-
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional Context
-      description: Any other information that might help us investigate.
     validations:
       required: false
