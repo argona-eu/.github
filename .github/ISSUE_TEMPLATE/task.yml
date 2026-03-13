@@ -1,0 +1,99 @@
+name: Task
+description: A unit of work, chore, or technical improvement (refactor, docs, infra, etc.)
+title: "[Task]: "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for planned work items that are not bugs or feature requests — e.g. refactoring, documentation, dependency updates, CI/CD improvements, or any other engineering task.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Task Summary
+      description: A short description of the work to be done.
+      placeholder: What needs to be done?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Task Type
+      description: What category best describes this task?
+      options:
+        - "Refactor"
+        - "Documentation"
+        - "Testing"
+        - "Infrastructure / DevOps"
+        - "Dependency update"
+        - "Performance"
+        - "Security"
+        - "Code cleanup"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: Background / Context
+      description: Why is this task needed? What triggered it?
+      placeholder: Provide any relevant background or context...
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria / Definition of Done
+      description: What does "done" look like for this task?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+        - [ ] Tests pass / CI is green
+    validations:
+      required: true
+
+  - type: textarea
+    id: subtasks
+    attributes:
+      label: Subtasks
+      description: Break down the work into smaller steps if helpful.
+      placeholder: |
+        - [ ] Step 1
+        - [ ] Step 2
+        - [ ] Step 3
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How urgent is this task?
+      options:
+        - "Critical"
+        - "High"
+        - "Medium"
+        - "Low"
+    validations:
+      required: true
+
+  - type: textarea
+    id: related
+    attributes:
+      label: Related Issues / PRs
+      description: Link any related issues, pull requests, or external references.
+      placeholder: "Closes #123, Related to #456"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Anything else that would help implement or review this task?
+    validations:
+      required: false
