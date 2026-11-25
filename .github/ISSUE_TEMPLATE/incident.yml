@@ -1,0 +1,76 @@
+name: Incident
+description: Register a production incident (outage or serious error on prod)
+title: "[Incident]: "
+labels: ["incident"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open this as soon as the incident is confirmed; fill in the rest as it becomes known. All times in UTC.
+
+  - type: input
+    id: start
+    attributes:
+      label: Start (UTC)
+      placeholder: YYYY-MM-DD HH:MM
+    validations:
+      required: true
+
+  - type: input
+    id: end
+    attributes:
+      label: End (UTC)
+      placeholder: YYYY-MM-DD HH:MM, or "ongoing"
+    validations:
+      required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Who and what was affected (everyone, one role, one screen), and what users could not do.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: detection
+    attributes:
+      label: Detection
+      options:
+        - Monitor (Sentry, uptime or cron monitor, Azure alert)
+        - User report
+    validations:
+      required: true
+
+  - type: textarea
+    id: detection-details
+    attributes:
+      label: Detection details
+      description: Which monitor, or who reported it and via which channel.
+    validations:
+      required: false
+
+  - type: textarea
+    id: cause
+    attributes:
+      label: Cause
+    validations:
+      required: false
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: Fix / PR
+      description: PR or action that resolved it (e.g. #123, rollback, restart).
+    validations:
+      required: false
+
+  - type: textarea
+    id: follow-up
+    attributes:
+      label: Follow-up
+      placeholder: |
+        - [ ] Follow-up issue(s): ...
+        - [ ] Emergency kit or runbook updated, if something was missing
+    validations:
+      required: false
