@@ -1,0 +1,35 @@
+name: Critical bugfix
+description: A fix that must reach prod urgently after a release (hotfix via demo to main)
+title: "[Critical bugfix]: "
+labels: ["critical bugfix"]
+body:
+  - type: textarea
+    id: what-broke
+    attributes:
+      label: What broke
+      description: What no longer works on prod.
+    validations:
+      required: true
+
+  - type: input
+    id: release
+    attributes:
+      label: Since which release
+      placeholder: e.g. V3.5.0
+    validations:
+      required: true
+
+  - type: textarea
+    id: pr
+    attributes:
+      label: PR
+      description: Hotfix PR into demo and the demo to main PR (e.g. #123, #124).
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: verified
+    attributes:
+      label: Verified on prod
+      options:
+        - label: Fix deployed to prod and verified on https://app.argona.be
