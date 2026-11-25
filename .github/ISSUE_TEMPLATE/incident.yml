@@ -39,6 +39,7 @@ body:
       options:
         - Monitor (Sentry, uptime or cron monitor, Azure alert)
         - User report
+        - Other (explain in Detection details)
     validations:
       required: true
 
